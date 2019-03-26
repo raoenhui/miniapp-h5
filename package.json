@@ -50,12 +50,18 @@
     "webpack": "4.28.3",
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
+    "workbox-webpack-plugin": "3.6.3",
+    "express": "^4.16.2"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "buildrun": "node deploy/app.js",
+    "deploy":"pm2 deploy deploy/ecosystem.config.js production setup ",
+    "update":"pm2 deploy deploy/ecosystem.config.js production update ",
+    "test": "node scripts/test.js",
+    "eject": "bin/react-scripts.js eject",
+    "eslint-fix":"eslint --fix 'src/**/*.{ts,tsx,js,jsx}'"
   },
   "eslintConfig": {
     "extends": "react-app"
